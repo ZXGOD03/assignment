@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Assessment</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin-bottom: 20px;
+        }
 
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Table 1</h2>
+
+<table id="table1">
+    <tr>
+        <th>Index #</th>
+        <th>Value</th>
+    </tr>
+</table>
+
+<h2>Table 2</h2>
+
+<table id="table2">
+    <tr>
+        <th>Category</th>
+        <th>Value</th>
+    </tr>
+</table>
+
+<script>
+    const data = {
+        A1: 41,
+        A2: 18,
+        A3: 21,
+        A4: 63,
+        A5: 2,
+        A6: 53,
+        A7: 5,
+        A8: 57,
+        A9: 60,
+        A10: 93,
+        A11: 28,
+        A12: 3,
+        A13: 90,
+        A14: 39,
+        A15: 80,
+        A16: 88,
+        A17: 49,
+        A18: 60,
+        A19: 26,
+        A20: 28
+    };
+
+    const table1 = document.getElementById("table1");
+
+    for (const key in data) {
+        const row = table1.insertRow();
+        row.insertCell(0).innerText = key;
+        row.insertCell(1).innerText = data[key];
+    }
+
+    const alpha = data.A5 + data.A20;
+    const beta = data.A15 / data.A7;
+    const charlie = data.A13 * data.A12;
+
+    const results = [
+        ["Alpha", alpha],
+        ["Beta", beta],
+        ["Charlie", charlie]
+    ];
+
+    const table2 = document.getElementById("table2");
+
+    results.forEach(item => {
+        const row = table2.insertRow();
+        row.insertCell(0).innerText = item[0];
+        row.insertCell(1).innerText = item[1];
+    });
+</script>
+
+</body>
+</html>
